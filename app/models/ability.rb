@@ -17,9 +17,7 @@ class Ability
 
    if user.editor_role?
       can :access, :rails_admin
-      if user.present?
-        can :read, User, user_id: user.id
-      end
+      can :manage, Article
       
    end
     #

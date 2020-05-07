@@ -1,0 +1,12 @@
+
+
+<% if current_user.superadmin_role? %>
+    <% @articles_user.each do |article| %>
+          <li><%= article.title %></li>
+    <% end %>
+<% else %>
+    <p>You are not user Admin</p>
+<% end %>
+
+
+
