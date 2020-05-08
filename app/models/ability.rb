@@ -18,7 +18,10 @@ class Ability
    if user.editor_role?
       can :access, :rails_admin
       can :manage, Article
-      
+   end
+
+   if user.user_role?
+    can :read, :all
    end
     #
     # The first argument to `can` is the action you are giving the user
