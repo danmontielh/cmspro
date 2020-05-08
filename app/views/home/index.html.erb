@@ -3,4 +3,11 @@
 
 <% if user_signed_in? %>
      <p> <%= link_to "Dashboard Articles", administrator_articles_path%> </p>
+
+     
+     <% @user.get_articles.each do |article| %>
+          <li><%= link_to  article.title , article_path(article.id) %></li>
+     <% end %>
+     
+
 <% end %>
